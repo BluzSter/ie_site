@@ -1,0 +1,66 @@
+@font-face {
+    font-family: "BaronNeue";
+    src: url("../fonts/BaronNeue.otf" );
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    text-align: center;
+}
+p {
+    text-align: center;
+}
+body {
+    background-image: url("../image/mainImage.jpg");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h1 {
+    font-family: "BaronNeue";
+    color: #707299;
+    text-align: center;
+    margin-top: 50px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #1c272e;
+    font-family: "BaronNeue";
+}
+.header_section {
+    display: flex;
+    align-items: center;
+}
+.header_item a{
+    padding: 15px 10px ;
+    margin-left: 5px;
+    font-size:40px;
+    color: #768A97;
+}
+.contact{
+    padding: 15px 10px ;
+    font-size: 25px;
+    color: #A38D70;
+}
+.logo a{
+    padding: 15px 10px ;
+    font-size:50px;
+    color: #A38D70;
+}
+.listAdvantages {
+    margin-top: 75px;
+}
+.listAdvantages p {
+    font-family: "BaronNeue";
+    color: #707299;
+    text-align: center;
+    margin-top: 10px;
+}
+.mainContainer {
+
+}

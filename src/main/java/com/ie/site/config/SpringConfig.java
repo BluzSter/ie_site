@@ -5,13 +5,16 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.http.CacheControl;
+import org.springframework.web.servlet.config.annotation.*;
+import org.springframework.web.servlet.resource.PathResourceResolver;
+import org.springframework.web.servlet.resource.VersionResourceResolver;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 import org.thymeleaf.templatemode.TemplateMode;
+
+import java.util.concurrent.TimeUnit;
 
 @Configuration
 @ComponentScan("com.ie.site")
@@ -51,5 +54,28 @@ public class SpringConfig implements WebMvcConfigurer {
         resolver.setForceContentType(true);
         resolver.setContentType("text/html; charset=UTF-8");
         registry.viewResolver(resolver);
+    }
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/css/**")
+                .addResourceLocations("/WEB-INF/resources/css/")
+                .setCacheControl(CacheControl.maxAge(365, TimeUnit.DAYS)
+                        .cachePrivate()
+                        .mustRevalidate())
+                .resourceChain(true)
+                .addResolver(new PathResourceResolver());
+        registry.addResourceHandler("/fonts/**")
+                .addResourceLocations("/WEB-INF/resources/fonts/")
+                .setCacheControl(CacheControl.maxAge(365, TimeUnit.DAYS)
+                        .cachePrivate()
+                        .mustRevalidate())
+                .resourceChain(true);
+        registry.addResourceHandler("/image/**")
+                .addResourceLocations("/WEB-INF/resources/image/")
+                .setCacheControl(CacheControl.maxAge(365, TimeUnit.DAYS)
+                        .cachePrivate()
+                        .mustRevalidate())
+                .resourceChain(true);
     }
 }
