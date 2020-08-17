@@ -58,6 +58,12 @@ public class SpringConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/**")
+                .addResourceLocations("/WEB-INF/resources/")
+                .setCacheControl(CacheControl.maxAge(365, TimeUnit.DAYS)
+                        .cachePrivate()
+                        .mustRevalidate())
+                .resourceChain(true);
         registry.addResourceHandler("/css/**")
                 .addResourceLocations("/WEB-INF/resources/css/")
                 .setCacheControl(CacheControl.maxAge(365, TimeUnit.DAYS)
@@ -73,6 +79,18 @@ public class SpringConfig implements WebMvcConfigurer {
                 .resourceChain(true);
         registry.addResourceHandler("/image/**")
                 .addResourceLocations("/WEB-INF/resources/image/")
+                .setCacheControl(CacheControl.maxAge(365, TimeUnit.DAYS)
+                        .cachePrivate()
+                        .mustRevalidate())
+                .resourceChain(true);
+        registry.addResourceHandler("/icons/**")
+                .addResourceLocations("/WEB-INF/resources/icons/")
+                .setCacheControl(CacheControl.maxAge(365, TimeUnit.DAYS)
+                        .cachePrivate()
+                        .mustRevalidate())
+                .resourceChain(true);
+        registry.addResourceHandler("/webfonts/**")
+                .addResourceLocations("/WEB-INF/resources/webfonts/")
                 .setCacheControl(CacheControl.maxAge(365, TimeUnit.DAYS)
                         .cachePrivate()
                         .mustRevalidate())
