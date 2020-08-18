@@ -5,10 +5,9 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1">
     <title>Ремонт МСК и МО</title>
-    <link rel="stylesheet" type="text/css" href="../css/homePage2.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="../icons/all.css"/>
-
+    <link rel="stylesheet" type="text/css" href="../css/homePage.css"/>
 </head>
 <body>
     <header id="header" class="header">
@@ -19,7 +18,7 @@
                         <a href="/">ИП СТРОЙ</a>
                     </div>
                 </div>
-                <div class="col-lg-5 ml-auto">
+                <div class="col-lg-6 ml-auto">
                     <nav>
                         <ul class="menu d-flex justify-content-center">
                             <li class="menu__item">
@@ -66,19 +65,21 @@
                                 Индивидуальный дизайн-проект
                             </h3>
                             <div class="feature__text">
-                                Вы будете точно знать, какой интерьер получите: перед ремонтом мы подготовим дизайн-проект с мебелью, светом и декором.                            </div>
+                                Вы будете точно знать, какой интерьер получите: перед ремонтом мы подготовим дизайн-проект с мебелью, светом и декором.
+                            </div>
                         </div>
                     </div>
                 </div>
                     <div class="col-lg-4">
                     <div class="feature__item d-flex">
                         <i class="fas fa-money-check feature__icon"></i>
-                        <div class="feature__block">
+                        <div class="feature__b  lock">
                             <h3 class="feature__title">
                                 Фиксированная цена и сроки
                             </h3>
                             <div class="feature__text">
-                                Смета на все работы и черновые материалы составляется до начала работ и остается неизменной до завершения.                            </div>
+                                Смета на все работы и черновые материалы составляется до начала работ и остается неизменной до завершения.
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -116,7 +117,8 @@
                                 Ремонт любой сложности
                             </h3>
                             <div class="feature__text">
-                                Работаем с СРО, проводим перепланировку, соблюдаем требования ГОСТ, СНиП, другие нормы.                        </div>
+                                Работаем с СРО, проводим перепланировку, соблюдаем требования ГОСТ, СНиП, другие нормы.
+                            </div>
                     </div>
                 </div>
             </div>
@@ -131,12 +133,40 @@
             </div>
         </div>
     </section>
-        <section id="receiveMessage" class="receiveMessage">
-            <div class="container">
-                <div class="row">
-
+    <section id="receiveMessage" class="receiveMessage">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title">
+                        <h2 class="title__main">
+                            Оставить заявку
+                        </h2>
                     </div>
                 </div>
-        </section>
+            </div>
+            <form>
+                <div class="form-group row">
+                    <div class="col-lg-12">
+                        <input type="email" class="form-control" id="form__email" placeholder="Введите email">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-lg-12">
+                        <input type="email" class="form-control" id="tel__form" placeholder="Введите телефон">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-lg-12">
+                        <textarea name="comment" class="form-control form__area" placeholder="Опишите вашу заявку"></textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-lg-12">
+                        <input type="submit" class="btn btn-primary" value="Оставить заявку"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
 </body>
 </html>
